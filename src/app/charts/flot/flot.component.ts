@@ -1166,7 +1166,7 @@ export class FlotComponent implements OnInit {
 
       //
 
-      series = [
+      let series = [
         {
           data: getRandomData(),
           lines: {

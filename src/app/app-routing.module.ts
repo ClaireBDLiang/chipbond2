@@ -9,7 +9,7 @@ import { MorrisComponent } from './charts/morris/morris.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'forms', component: FormsComponent },
+  { path: 'forms/:type', component: FormsComponent },
   {
     path: 'charts',
     children: [
