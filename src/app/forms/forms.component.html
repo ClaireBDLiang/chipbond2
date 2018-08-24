@@ -14,7 +14,18 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-lg-6">
-            <form role="form">
+            <form role="form" #form="ngForm" (ngSubmit)="doSubmit(form)">
+              <pre>form.dirty = {{ form.dirty }}
+form.pristine = {{ form.pristine }}
+form.touched = {{ form.touched }}
+form.untouched = {{ form.untouched }}
+form.valid = {{ form.valid }}
+form.invalid = {{ form.invalid }}
+form.enabled = {{ form.enabled }}
+form.disabled = {{ form.disabled }}
+form.errors = {{ form.errors | json }}
+form.value = {{ form.value | json }}
+data = {{ data | json }}</pre>
               <div class="form-group" [class.has-error]="mName.invalid">
                 <label>姓名</label>
                 <input class="form-control" name="name" required minlength="2" [(ngModel)]="data.name" #mName="ngModel">
@@ -29,9 +40,12 @@ name.disabled = {{ mName.disabled }}
 name.errors = {{ mName.errors | json }}</pre>
                 <p class="help-block" *ngIf="mName['errors']?.required">請輸入姓名</p>
               </div>
-              <div class="form-group">
-                <label>Text Input with Placeholder</label>
-                <input class="form-control" placeholder="Enter text">
+              <div class="form-group" [class.has-error]="mTel.invalid">
+                <label>電話</label>
+                <input class="form-control"
+                  name="tel" [(ngModel)]="data.tel" #mTel="ngModel"
+                  pattern="\d{4}-\d{3}-\d{3}"
+                  placeholder="範例：09xx-999-333">
               </div>
               <div class="form-group">
                 <label>Static Control</label>
@@ -49,17 +63,17 @@ name.errors = {{ mName.errors | json }}</pre>
                 <label>Checkboxes</label>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="">Checkbox 1
+                    <input type="checkbox" name="habbit0" [(ngModel)]="data.habbit[0]">Checkbox 1
                   </label>
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="">Checkbox 2
+                    <input type="checkbox" name="habbit1" [(ngModel)]="data.habbit[1]">Checkbox 2
                   </label>
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="">Checkbox 3
+                    <input type="checkbox" name="habbit2" [(ngModel)]="data.habbit[2]">Checkbox 3
                   </label>
                 </div>
               </div>
