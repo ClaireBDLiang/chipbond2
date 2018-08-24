@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-form2',
@@ -13,10 +13,26 @@ export class Form2Component implements OnInit {
   constructor(private fb: FormBuilder) {
 
     this.form = this.fb.group({
-      name: ['Will', [Validators.required, Validators.minLength(2)]],
-      tel: ['0988-888-888', [Validators.pattern(/\d{4}-\d{3}-\d{3}/)]]
+      people: this.fb.array([
+        this.fb.group({
+          name: ['Will', [Validators.required, Validators.minLength(2)]],
+          tel: ['0988-888-888', [Validators.pattern(/\d{4}-\d{3}-\d{3}/)]]
+        }),
+        this.fb.group({
+          name: ['John', [Validators.required, Validators.minLength(2)]],
+          tel: ['0944-444-444', [Validators.pattern(/\d{4}-\d{3}-\d{3}/)]]
+        })
+      ])
     });
 
+  }
+
+  addPerson() {
+    var arr = this.form.get('people') as FormArray;
+    arr.push(this.fb.group({
+      name: ['Default ' + (arr.length + 1), [Validators.required, Validators.minLength(2)]],
+      tel: ['', [Validators.pattern(/\d{4}-\d{3}-\d{3}/)]]
+    }));
   }
 
   doSubmit() {
