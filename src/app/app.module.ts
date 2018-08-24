@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsComponent } from './forms/forms.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { FlotComponent } from './charts/flot/flot.component';
-import { MorrisComponent } from './charts/morris/morris.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +13,6 @@ import { MorrisComponent } from './charts/morris/morris.component';
     DashboardComponent,
     FormsComponent,
     NotFoundComponent,
-    FlotComponent,
-    MorrisComponent
   ],
   imports: [
     BrowserModule,
