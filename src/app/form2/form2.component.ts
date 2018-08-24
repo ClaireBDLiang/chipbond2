@@ -27,6 +27,21 @@ export class Form2Component implements OnInit {
 
   }
 
+  resetForm() {
+    this.form.reset({
+      people: [
+        {
+          name: 'Will',
+          tel: '0911-222-333'
+        },
+        {
+          name: 'John',
+          tel: '0922-444-333'
+        }
+      ]
+    })
+  }
+
   addPerson() {
     var arr = this.form.get('people') as FormArray;
     arr.push(this.fb.group({
