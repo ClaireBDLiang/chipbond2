@@ -8,6 +8,7 @@ import { FormsComponent } from './forms/forms.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LayoutComponent } from './layout/layout.component';
     NotFoundComponent,
     LoginComponent,
     LayoutComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
