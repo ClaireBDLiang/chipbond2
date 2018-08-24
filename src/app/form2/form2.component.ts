@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, AbstractControl } from '@angular/forms';
-
+import { debounceTime } from "rxjs/operators";
 function numberRange(control: AbstractControl) {
   if (control.value < 0 || control.value > 99) {
     return {
@@ -36,6 +36,13 @@ export class Form2Component implements OnInit {
         })
       ])
     });
+
+    this.form.valueChanges
+      .pipe(
+        debounceTime(3000)
+      ).subscribe(() => {
+        // TODO: 當欄位輸入資料停止 3 秒才會執行這段
+      })
 
   }
 
