@@ -13,7 +13,8 @@ export class FormsComponent implements OnInit {
 
   data: any = {
     name: 'Will',
-    habbit: []
+    habbit: [],
+    gender: 'N'
   };
 
   constructor(private router: Router,

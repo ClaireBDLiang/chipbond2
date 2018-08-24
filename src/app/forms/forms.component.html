@@ -90,20 +90,20 @@ name.errors = {{ mName.errors | json }}</pre>
                 </label>
               </div>
               <div class="form-group">
-                <label>Radio Buttons</label>
+                <label>性別</label>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
+                    <input type="radio" name="gender" value="M" [(ngModel)]="data.gender">男生
                   </label>
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
+                    <input type="radio" name="gender" value="F" [(ngModel)]="data.gender">女生
                   </label>
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
+                    <input type="radio" name="gender" value="N" [(ngModel)]="data.gender">未知
                   </label>
                 </div>
               </div>
