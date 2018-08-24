@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsComponent } from './forms/forms.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DashboardComponent,
     FormsComponent,
     NotFoundComponent,
+    LoginComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
