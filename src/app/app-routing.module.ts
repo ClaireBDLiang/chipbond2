@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginGuard } from './login.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { Form2Component } from './form2/form2.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'forms/:type', component: FormsComponent },
+      { path: 'form2', component: Form2Component },
       {
         path: 'charts',
         loadChildren: './charts/charts.module#ChartsModule'
