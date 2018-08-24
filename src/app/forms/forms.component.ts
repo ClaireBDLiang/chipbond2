@@ -17,6 +17,12 @@ export class FormsComponent implements OnInit {
     gender: 'N'
   };
 
+  habbits = [
+    "Checkbox 1",
+    "Checkbox 2",
+    "Checkbox 3"
+  ]
+
   constructor(private router: Router,
               private route: ActivatedRoute) { }
 
@@ -26,6 +32,10 @@ export class FormsComponent implements OnInit {
       alert('表單因為還有問題，所以尚未送出！');
     }
     // TODO: Submit form!
+  }
+
+  addHabbitOption() {
+    this.habbits.push('Test 1')
   }
 
   ngOnInit() {
