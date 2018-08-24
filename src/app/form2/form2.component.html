@@ -38,6 +38,7 @@ form.value = {{ form.value | json }}</pre>
                     <label>電話</label>
                     <input class="form-control" formControlName="tel"
                       placeholder="範例：09xx-999-333">
+                    <pre>tel.errors = {{ group.get('tel').errors | json }}</pre>
                   </div>
                   <hr>
                 </div>

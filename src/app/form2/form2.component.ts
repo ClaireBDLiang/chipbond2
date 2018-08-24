@@ -1,5 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, AbstractControl } from '@angular/forms';
+
+function numberRange(control: AbstractControl) {
+  if (control.value < 0 || control.value > 99) {
+    return {
+      numberRange: {
+        min: 0,
+        max: 99
+      }
+    };
+  }
+  return null;
+}
 
 @Component({
   selector: 'app-form2',
@@ -16,11 +28,11 @@ export class Form2Component implements OnInit {
       people: this.fb.array([
         this.fb.group({
           name: ['Will', [Validators.required, Validators.minLength(2)]],
-          tel: ['0988-888-888', [Validators.pattern(/\d{4}-\d{3}-\d{3}/)]]
+          tel: ['0988-888-888', [Validators.pattern(/\d{4}-\d{3}-\d{3}/), numberRange]]
         }),
         this.fb.group({
           name: ['John', [Validators.required, Validators.minLength(2)]],
-          tel: ['0944-444-444', [Validators.pattern(/\d{4}-\d{3}-\d{3}/)]]
+          tel: ['0944-444-444', [Validators.pattern(/\d{4}-\d{3}-\d{3}/), numberRange]]
         })
       ])
     });
