@@ -10,6 +10,10 @@ export class FormsComponent implements OnInit {
 
   type: string;
 
+  data: any = {
+    name: 'Will'
+  };
+
   constructor(private router: Router,
               private route: ActivatedRoute) { }
 
